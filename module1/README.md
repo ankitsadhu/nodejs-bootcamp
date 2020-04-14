@@ -34,22 +34,43 @@
 
 A callback function is a <mark>function that is passed as an argument to another function, to be “called back” at a later time</mark>. A function that accepts other functions as arguments is called a <mark>higher-order function</mark>, which contains the logic for when the callback function gets executed. It’s the combination of these two that allow us to extend our functionality.
 ```javascript
-    function createQuote(quote, callback){ 
-    var myQuote = "Like I always say, " + quote;
-    callback(myQuote); // 2
-    }
-
-    function logQuote(quote){
-    console.log(quote);
-    }
-
-    createQuote("eat your vegetables!", logQuote); // 1
+   // add() function is called with arguments a, b 
+   // and callback, callback will be executed just  
+   // after ending of add() function 
+   function add(a, b , callback){ 
+   document.write(`The sum of ${a} and ${b} is ${a+b}.` +"<br>"); 
+   callback(); 
+   } 
+     
+   // disp() function is called just 
+   // after the ending of add() function  
+   function disp(){ 
+   document.write('This must be printed after addition'); 
+   } 
+     
+   // Calling add() function 
+   add(5,6,disp);
 ```
 
-```terminal
-    terminal: node aap.js 
-     Like I always say, eat your vegetables!
+```console
+     Ronie@Ankit-MacBook-Air ~ % node app.js
+     The sum of 5 and 6 is 11.
+     This must be printed after addition
 ```
+
+
+```javascript
+    function add(a, b , callback){ 
+   document.write(`The sum of ${a} and ${b} is ${a+b}.` +"<br>"); 
+   callback(); 
+   } 
+   
+   // add() function is called with arguments given below 
+   add(5,6,function disp(){ 
+   document.write('This must be printed after addition.'); 
+   }); 
+```
+
 - **Promises**
 
 - **Async/Await**
