@@ -1,5 +1,6 @@
 # ES6
- # 1. Arrow Function
+
+  # 1. Arrow Function
 
  ```javascript
     //function
@@ -32,7 +33,7 @@
 
 - **Callbacks**
 
-A callback function is a <mark>function that is passed as an argument to another function, to be “called back” at a later time</mark>. A function that accepts other functions as arguments is called a <mark>higher-order function</mark>, which contains the logic for when the callback function gets executed. It’s the combination of these two that allow us to extend our functionality.
+A callback function is a <mark> function that is passed as an argument to another function, to be “called back” at a later time </mark>. A function that accepts other functions as arguments is called a <mark> higher-order function </mark>, which contains the logic for when the callback function gets executed. It’s the combination of these two that allow us to extend our functionality.
 
 ```javascript
    // add() function is called with arguments a, b 
@@ -72,6 +73,60 @@ A callback function is a <mark>function that is passed as an argument to another
    });
 ```
 
+```javascript
+    function add(a, b , callback){ 
+   document.write(`The sum of ${a} and ${b} is ${a+b}.` +"<br>"); 
+   callback(); 
+   } 
+   
+   // add() function is called with arguments given below 
+   add(5,6,disp() => { 
+   document.write('This must be printed after addition.'); 
+   });
+```
+
 - **Promises**
+Promises are used to handle asynchronous operations in JavaScript. They are easy to manage when dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanageable code.
+   
+   A Promise has four states:
+    - fulfilled: Action related to the promise succeeded.
+    - rejected: Action related to the promise failed.
+    - pending: Promise is still pending i.e not fulfilled or rejected yet.
+    - settled: Promise has fulfilled or rejected.
+
+
+    Syntax
+
+        ```javascript
+        var promise = new Promise(function(resolve, reject){
+            //do something
+        });
+        ```
+        Parameters
+
+    - Promise constructor takes only one argument,a callback function.
+    - Callback function takes two arguments, resolve and reject
+    - Perform operations inside the callback function and if everything went well then call resolve.
+    - If desired operations do not go well then call reject.
+
+    ```javascript
+        var promise = new Promise(function(resolve, reject) { 
+            const x = "geeksforgeeks"; 
+            const y = "geeksforgeeks"
+            if(x === y) { 
+            resolve(); 
+            } else { 
+            reject(); 
+            } 
+        }); 
+    
+        promise. 
+        then(function () { 
+            console.log('Success, You are a GEEK'); 
+        }). 
+        catch(function () { 
+            console.log('Some error has occured'); 
+        }); 
+```
 
 - **Async/Await**
