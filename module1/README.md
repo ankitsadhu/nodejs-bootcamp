@@ -96,14 +96,15 @@ Promises are used to handle asynchronous operations in JavaScript. They are easy
 
 
     Syntax
-
-        ```javascript
+    
+    ```javascript
         var promise = new Promise(function(resolve, reject){
             //do something
         });
-        ```
+        
+    ```
+        
         Parameters
-
     - Promise constructor takes only one argument,a callback function.
     - Callback function takes two arguments, resolve and reject
     - Perform operations inside the callback function and if everything went well then call resolve.
@@ -127,6 +128,6 @@ Promises are used to handle asynchronous operations in JavaScript. They are easy
         catch(function () { 
             console.log('Some error has occured'); 
         }); 
-```
+    ```
 
 - **Async/Await**
