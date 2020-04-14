@@ -110,6 +110,7 @@ Promises are used to handle asynchronous operations in JavaScript. They are easy
     - Callback function takes two arguments, resolve and reject
     - Perform operations inside the callback function and if everything went well then call resolve.
     - If desired operations do not go well then call reject.
+    
 
     ```javascript
         var promise = new Promise(function(resolve, reject) { 
